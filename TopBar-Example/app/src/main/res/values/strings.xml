@@ -4,5 +4,6 @@
     <string name="app_name">Example TopBar</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="button_text">Go to second activity</string>
 
 </resources>

@@ -11,6 +11,7 @@ public class MyActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+		supportRequestWindowFeature(getWindow().FEATURE_NO_TITLE);
         setContentView(R.layout.activity_my);
     }
 
