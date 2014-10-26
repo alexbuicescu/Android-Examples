@@ -12,23 +12,30 @@ import java.util.List;
 /**
  * Created by Alexandru on 02-Oct-14.
  */
-public class ListViewAdapter extends BaseAdapter
-{
-	/** The inflater. */
+public class ListViewAdapter extends BaseAdapter {
+	/**
+	 * The inflater.
+	 */
 	protected LayoutInflater inflater;
 
-	/** The contacts list. */
+	/**
+	 * The items list.
+	 */
 	protected List<String> items;
 
-	/** The context. */
+	/**
+	 * The context.
+	 */
 	private Context context;
+
 	/**
 	 * The Class ViewHolder.
 	 */
 	private static class ViewHolder {
-		TextView theTextView;
-
+		TextView theTitleTextView;
+		TextView theSubtitleTextView;
 	}
+
 	public ListViewAdapter(Context context, List<String> items) {
 		this.context = context;
 		this.items = items;
@@ -36,44 +43,40 @@ public class ListViewAdapter extends BaseAdapter
 	}
 
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent)
-	{
+	public View getView(int position, View convertView, ViewGroup parent) {
 		ViewHolder holder;
 
-		if (convertView == null)
-		{
+		if (convertView == null) {
 			convertView = inflater.inflate(R.layout.listview_custom_item, parent, false);
 
 			holder = new ViewHolder();
 
-			holder.theTextView = (TextView) convertView.findViewById(R.id.listview_adapter_textview);
+			holder.theTitleTextView = (TextView) convertView.findViewById(R.id.listview_adapter_title_textview);
+			holder.theSubtitleTextView = (TextView) convertView.findViewById(R.id.listview_adapter_subtitle_textview);
 
 			convertView.setTag(holder);
-		} else
-		{
+		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
 
-		holder.theTextView.setText(items.get(position));
+		holder.theTitleTextView.setText(items.get(position));
+		holder.theSubtitleTextView.setText("Item #" + position);
 
 		return convertView;
 	}
 
 	@Override
-	public int getCount()
-	{
+	public int getCount() {
 		return items.size();
 	}
 
 	@Override
-	public Object getItem(int i)
-	{
+	public Object getItem(int i) {
 		return items.get(i);
 	}
 
 	@Override
-	public long getItemId(int i)
-	{
+	public long getItemId(int i) {
 		return i;
 	}
 

@@ -1,17 +1,32 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/sel_bg_listview_item"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/listview_adapter_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
         android:layout_centerVertical="true"
-        android:textSize="20sp"
-        android:textColor="@color/sel_text_black_and_white"/>
+        android:layout_marginLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/sel_bg_listview_item">
 
+        <TextView
+            android:id="@+id/listview_adapter_title_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/sel_text_black_and_white"
+            android:text="Hello World"/>
+
+        <TextView
+            android:id="@+id/listview_adapter_subtitle_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/listview_adapter_title_textview"
+            android:layout_centerVertical="true"
+            android:textSize="15sp"
+            android:textColor="@color/sel_text_grey_and_white"
+            android:text="Hello World"/>
+    </RelativeLayout>
 </RelativeLayout>
